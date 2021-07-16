@@ -6,7 +6,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-response = requests.get(url=f"https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=#USE YOUR OWN API KEY HERE#")
+response = requests.get(url=f"https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=59d39e95596540b8b8cc34b45495310d")
 
 @app.route('/')
 def hello():
@@ -44,7 +44,7 @@ def send_mail():
     with smtplib.SMTP("smtp.gmail.com") as connection:
         connection.starttls()
 
-        connection.login(user='#YOUR EMAIL#', password='#YOUR PASSWORD#')
+        connection.login(user='nilabja.2000@gmail.com', password='18sep2000')
 
         connection.sendmail(from_addr='nilabja.2000@gmail.com',
                             to_addrs=email,
@@ -55,4 +55,5 @@ def send_mail():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
 
